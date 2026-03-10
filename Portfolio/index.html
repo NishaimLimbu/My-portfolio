@@ -15,7 +15,7 @@
 <body>
     <header>
         <nav>
-            <div class="left">Nishaim's Portfolio</div>
+            <div class="left"><a href="#home" class="logo">Nishaim's Portfolio</a></div>
             <div class="right">
                 <button class="hamburger" aria-label="Toggle navigation menu">
                     <span></span>
@@ -60,8 +60,6 @@
                         <span class="skill-tag">HTML</span>
                         <span class="skill-tag">CSS</span>
                         <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Bootstrap</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -70,7 +68,6 @@
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">Node.js</span>
                         <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">REST APIs</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -87,8 +84,8 @@
                     <h3>Tools & Platforms</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
                         <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Replit</span>
                         <span class="skill-tag">VS Code</span>
                         <span class="skill-tag">Jupyter</span>
                     </div>
@@ -109,28 +106,27 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-icon">🤖</div>
-                    <h3>ML Dashboard</h3>
-                    <p>An intelligent dashboard using machine learning models to deliver real-time insights and
-                        data-driven decisions.</p>
+                    <div class="project-icon">💎</div>
+                    <h3>Dimond Price Prediction</h3>
+                    <p>An machine learning porject uses pandas, numpy and scikit-learn. ML model use for prediction of dimond according to user need shape, size and quality</p>
                     <div class="project-links">
-                        <a href="https://github.com/NishaimLimbu" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/NishaimLimbu/Diamond_Price_Prediction" target="_blank"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-icon">📱</div>
-                    <h3>Mobile App</h3>
-                    <p>A cross-platform mobile application with seamless user experience and modern UI design.</p>
+                    <div class="project-icon">👔</div>
+                    <h3>Fashion Recommendation System</h3>
+                    <p>An model use for recommending fashion for men and women. It uses more than 50k dataset images.</p>
                     <div class="project-links">
-                        <a href="https://github.com/NishaimLimbu" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/NishaimLimbu/Fashion-recommendation-system" target="_blank"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-icon">☁️</div>
-                    <h3>Cloud Platform</h3>
-                    <p>A scalable cloud-based platform deployed on AWS with Docker containerization.</p>
+                    <h3>YOLOv8 Object Detection</h3>
+                    <p>This project uses YOLOv8 with Streamlit to create interactive video-based object detection apps.</p>
                     <div class="project-links">
-                        <a href="https://github.com/NishaimLimbu" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/NishaimLimbu/YOLOv8_project" target="_blank"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
             </div>
@@ -176,16 +172,12 @@
             <div class="social-links">
                 <a href="https://github.com/NishaimLimbu" target="_blank" aria-label="GitHub"><i
                         class="fab fa-github"></i> <span>GitHub</span></a>
-                <a href="https://www.linkedin.com/in/nishaim-limbu" target="_blank" aria-label="LinkedIn"><i
-                        class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
-                <a href="https://twitter.com/nishaim_limbu" target="_blank" aria-label="Twitter"><i
-                        class="fab fa-twitter"></i> <span>Twitter</span></a>
-                <a href="https://www.instagram.com/nishaim_limbu" target="_blank" aria-label="Instagram"><i
+                <a href="https://www.linkedin.com/in/nishaim-limbu-yonghang-9909153b5" target="_blank"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
+                <a href="https://www.instagram.com/shaming.limbu/" target="_blank" aria-label="Instagram"><i
                         class="fab fa-instagram"></i> <span>Instagram</span></a>
                 <a href="https://www.facebook.com/shaming.nishaim" target="_blank" aria-label="Facebook"><i
                         class="fab fa-facebook"></i> <span>Facebook</span></a>
-                <a href="mailto:itsnishaim@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i>
-                    <span>Email</span></a>
             </div>
         </div>
     </footer>
@@ -202,9 +194,18 @@
         // Hamburger menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
+
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a nav link
+        document.querySelectorAll('.nav-menu li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
         });
 
         // Floating particles
