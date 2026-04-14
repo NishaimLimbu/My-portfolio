@@ -1,0 +1,877 @@
+/* ==========================================================================
+   1. GLOBAL RESET - Basic Setup
+   Removes default browser spacing so all elements start clean
+   ========================================================================== */
+
+/* Targets ALL elements (<html>, <body>, <div>, <p>, etc.)
+   Removes default margin/padding browsers add, and sets box-sizing 
+   so padding doesn't increase element width */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. HTML AND BODY - Page Base Styles
+   Sets up the main page container
+   ========================================================================== */
+
+/* Targets <html> and <body> tags
+   Prevents horizontal scrolling and sets up the page */
+html, body {
+    max-width: 100%;
+    overflow-x: body;
+    
+}
+
+/* Targets <body> tag only
+   - Font: Poppins from Google Fonts
+   - Background: Dark blue (#0d121e)
+   - Text: White
+   - Line height: 1.6 (space between lines)
+   - Layout: Flex column (stacks elements vertically)
+   - Minimum height: 100vh (full viewport height) */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d121e;
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ==========================================================================
+   3. NAVIGATION BAR - Top Menu
+   The fixed bar at the top with logo and links
+   ========================================================================== */
+
+/* Targets <nav> tag in header
+   - Dark background (#0f172a)
+   - Flexbox for horizontal layout
+   - Items centered vertically
+   - Space between logo and menu
+   - Height: 80px
+   - Fixed at top of page (stays while scrolling)
+   - z-index: 1000 (stays above other content) */
+nav {
+    background-color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 clamp(20px, 5vw, 200px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    max-width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Targets <a class="logo"> inside nav
+   Removes underline, sets white color, large font for name */
+nav .left .logo {
+    text-decoration: none;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Targets <a class="logo"> on hover (mouse over)
+   Changes text to lavender color when user hovers */
+nav .left .logo:hover {
+    color: lavender;
+}
+
+/* Targets <div class="left"> inside nav
+   This holds the logo text */
+nav .left {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Targets <div class="right"> inside nav
+   This holds the hamburger menu and navigation links */
+nav .right {
+    display: flex;
+    align-items: center;
+}
+
+/* ==========================================================================
+   4. HAMBURGER MENU - Mobile Toggle Button
+   Three-line icon that appears on mobile screens
+   ========================================================================== */
+
+/* Targets <button class="hamburger">
+   Hidden on desktop, shows only on mobile
+   - flex-direction: column (stacks 3 lines vertically) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1001;
+}
+
+/* Targets <span> inside .hamburger (the 3 lines)
+   Creates the hamburger icon lines */
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   5. NAVIGATION MENU - Links List
+   The menu items: Home, Skills, Projects, Experience
+   ========================================================================== */
+
+/* Targets <ul class="nav-menu">
+   Container for navigation links - makes it horizontal */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+}
+
+/* Targets <li> inside .nav-menu
+   Each navigation item */
+.nav-menu li {
+    margin: 0 15px;
+}
+
+/* Targets <a> links inside .nav-menu
+   - Removes underline
+   - White text
+   - Padding for clickable area */
+.nav-menu li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* Targets <a> links on hover
+   Changes color and adds background when hovered */
+.nav-menu li a:hover {
+    color: lavender;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   6. MAIN CONTENT AREA
+   Wrapper for all page content except header/footer
+   ========================================================================== */
+
+/* Targets <main> tag
+   Allows it to grow and fill available space */
+main {
+    flex-grow: 1;
+}
+
+/* ==========================================================================
+   7. HERO SECTION - First View Area
+   The main landing area with profile image and intro text
+   ========================================================================== */
+
+/* Targets <section id="home" class="firstSection">
+   - Flexbox to put text and image side by side
+   - Centered both vertically and horizontally
+   - Min height: 85vh (85% of viewport)
+   - Padding top: 140px (accounts for fixed nav) */
+.firstSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    min-height: 85vh;
+    padding: 140px 60px 40px 60px;
+    background-color: #0d121e;
+}
+
+/* Targets <div class="leftSection"> in hero
+   Holds the intro text - takes 45% width */
+.leftSection {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Targets <div class="introText">
+   Holds the introduction text */
+.introText {
+    font-size: 2.4rem;
+    max-width: 100%;
+}
+
+/* Targets <span class="txtcolor">
+   The name "Nishaim Limbu" - blue colored */
+.txtcolor {
+    color: rgb(0 229 255);
+}
+
+/* Targets <span class="passionate-text">
+   "and I am a passionate" line */
+.passionate-text {
+    display: block;
+    margin: 5px 0;
+}
+
+/* Targets <span id="element">
+   The typed text area (JavaScript typed.js) */
+#element {
+    color: rgb(0 229 255);
+}
+
+/* Targets <div class="button"> inside introText
+   Container for Resume and GitHub buttons */
+.introText .button {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   8. BUTTONS - Call to Action Buttons
+   Resume and GitHub buttons in hero section
+   ========================================================================== */
+
+/* Targets all <a class="btn"> elements
+   Base button style for all buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Targets <a class="btn resume-btn">
+   The "Resume" download button - blue to purple gradient */
+.resume-btn {
+    background: linear-gradient(135deg, #4a79d2, #a15ce6);
+    box-shadow: 0 4px 15px rgba(86, 105, 189, 0.4);
+}
+
+/* Targets Resume button on hover
+   Moves up slightly with stronger shadow */
+.resume-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* Targets <a class="btn github-btn">
+   The GitHub button - cyan to green gradient */
+.github-btn {
+    background: linear-gradient(135deg, #00c8ff, #40dc50);
+    box-shadow: 0 4px 15px rgba(0, 201, 255, 0.4);
+}
+
+/* Targets GitHub button on hover
+   Moves up slightly with stronger cyan shadow */
+.github-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 201, 255, 0.6);
+}
+
+/* ==========================================================================
+   9. HERO IMAGE - Profile Picture
+   The right side with profile photo
+   ========================================================================== */
+
+/* Targets <div class="rightSection"> in hero
+   Holds the profile image - takes 45% width */
+.rightSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+}
+
+/* Targets <img> inside rightSection
+   The profile picture - 450px tall with rounded corners */
+.rightSection img {
+    height: 450px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   10. HORIZONTAL RULE - Section Divider
+   The pink line separating sections
+   ========================================================================== */
+
+/* Targets <hr> inside <main>
+   Pink divider line between sections */
+main hr {
+    background: #d89898;
+    height: 2px;
+    margin: 40px clamp(20px, 5%, 84px);
+}
+
+/* ==========================================================================
+   11. SKILLS SECTION
+   Grid of skill categories with tags
+   ========================================================================== */
+
+/* Targets <section id="skills" class="skillsSection">
+   - Padding around the section
+   - min-height: fills most of viewport */
+.skillsSection {
+    padding: 60px 8%;
+    min-height: calc(100vh - 160px);
+    scroll-margin-top: 100px;
+}
+
+/* Targets <h1 class="section-title"> in skills section
+   Large purple gradient title "Skills" */
+.skillsSection .section-title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #c77dff, #7b2cbf, #9d4edd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Targets <div class="skills-container">
+   Grid layout for skill cards - responsive columns */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Targets <div class="skill-category">
+   Each card in skills section (Frontend, Backend, etc.)
+   Glassmorphism effect with semi-transparent background */
+.skill-category {
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+}
+
+/* Targets skill category on hover
+   Card lifts up with purple glow */
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(199, 125, 255, 0.3);
+}
+
+/* Targets <h3> inside skill-category
+   The category title (Frontend, Backend, etc.) */
+.skill-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #c77dff;
+}
+
+/* Targets <div class="skill-tags">
+   Container for skill pills/tags */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Targets <span class="skill-tag">
+   Individual skill pills (HTML, Python, Git, etc.) */
+.skill-tag {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(199, 125, 255, 0.2), rgba(123, 44, 191, 0.3));
+    border: 1px solid rgba(199, 125, 255, 0.3);
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+/* Targets skill tag on hover
+   Tag grows slightly with darker purple */
+.skill-tag:hover {
+    background: linear-gradient(135deg, rgba(199, 125, 255, 0.4), rgba(123, 44, 191, 0.5));
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   12. PROJECTS SECTION
+   Grid of project cards
+   ========================================================================== */
+
+/* Targets <section id="projects" class="projectsSection">
+   Projects showcase area */
+.projectsSection {
+    padding: 60px 8%;
+    min-height: calc(100vh - 160px);
+    scroll-margin-top: 100px;
+}
+
+/* Targets <h1 class="section-title"> in projects
+   "Projects" title with purple gradient */
+.projectsSection .section-title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #c77dff, #7b2cbf, #9d4edd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Targets <div class="projects-grid">
+   Grid layout for project cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Targets <div class="project-card">
+   Each project card with icon, title, description */
+.project-card {
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    overflow: visible;
+}
+
+.project-card .project-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    transition: none;
+}
+
+.project-card h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Targets project card on hover
+   Card lifts up higher with purple glow */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(199,125,255,0.3), 0 10px 20px rgba(199,125,255,0.2), -15px 0 25px rgba(199,125,255,0.25), 15px 0 25px rgba(199,125,255,0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+    filter: drop-shadow(0 0 35px rgba(199,125,255,0.7));
+}
+
+.project-card:hover .project-icon {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 15px rgba(199,125,255,0.8));
+}
+
+.project-card:hover h3 {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(199,125,255,0.8);}
+
+
+/* Targets <p> inside project card
+   Project description text */
+.project-card p {
+    font-size: 0.9rem;
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Targets <div class="project-links">
+   Container for project links (GitHub, Live) */
+.project-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* Targets <a> inside project-links
+   Purple links to project code */
+.project-links a {
+    color: #c77dff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+/* Targets project link on hover
+   Turns white when hovered */
+.project-links a:hover {
+    color: white;
+}
+
+/* ==========================================================================
+   13. WORK EXPERIENCE SECTION
+   Cards showing work experience
+   ========================================================================== */
+
+/* Targets <section id="work" class="workSection">
+   Experience section with 4 cards in a row */
+.workSection {
+    padding: 80px 8%;
+    min-height: calc(100vh - 160px);
+    scroll-margin-top: 100px;
+    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Targets <h1 class="work-title">
+   "Experience" section title */
+.workSection .work-title {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    background: linear-gradient(90deg, #c77dff, #7b2cbf, #9d4edd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Targets <div class="container"> inside work section
+   Grid with 4 equal columns for experience cards */
+.workSection .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    padding: 0 5%;
+    margin: 50px auto 0;
+    width: 100%;
+    overflow: visible;
+}
+
+/* Targets <div class="card"> inside work section
+   Each experience card with purple glow effect */
+.workSection .card {
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    overflow: visible;
+}
+
+.workSection .icon {
+    transition: all 0.4s ease;
+}
+
+/* Targets work card on hover
+   Lifts up with strong purple glow */
+.workSection .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(199,125,255,0.3), 0 10px 20px rgba(199,125,255,0.2), -15px 0 25px rgba(199,125,255,0.25), 15px 0 25px rgba(199,125,255,0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+    filter: drop-shadow(0 0 35px rgba(199,125,255,0.7));
+}
+
+.workSection .card:hover .icon {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 15px rgba(199,125,255,0.8));
+}
+
+.workSection .card:hover h2 {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(199,125,255,0.8);
+}
+
+/* Targets .card::before (purple gradient circle)
+   Creates decorative glow effect in top-right of card */
+/* Removed purple ::before blob from work cards */
+
+/* Targets <div class="icon"> inside work card
+   The emoji icon for each experience */
+.workSection .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* Targets <h2> inside work card
+   Experience title (CIB on the Mobile, etc.) */
+.workSection .card h2 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Targets <p> inside work card
+   Experience description text */
+.workSection .card p {
+    font-size: 14px;
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Targets <a class="btn-card">
+   "LEARN MORE" buttons in experience cards */
+.btn-card {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: 1px solid #c77dff;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    z-index: 1;
+}
+
+/* Targets .btn-card::before (background layer)
+   Purple gradient that slides in on hover */
+.btn-card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #c77dff, #7b2cbf);
+    top: 0;
+    left: -100%;
+    transition: 0.4s;
+    z-index: -1;
+}
+
+/* Targets btn-card on hover
+   Slides the purple background in and adds glow */
+.btn-card:hover::before {
+    left: 0;
+}
+
+.btn-card:hover {
+    box-shadow: 0 0 20px #c77dff;
+}
+
+/* ==========================================================================
+   14. ANIMATIONS - Keyframe Animations
+   Effects that animate over time
+   ========================================================================== */
+
+/* Gradient animation - moves background position
+   Used for gradient text effects */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Fade up animation - fades in while moving up
+   Used for elements appearing on page */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade down animation - fades in while moving down */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   15. FLOATING PARTICLES - Background Effect
+   Purple dots that float upward in background
+   ========================================================================== */
+
+/* Targets <div class="particle">
+   Small purple circles in background
+   Fixed position, moves upward infinitely */
+.particle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: #c77dff;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 8s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Float animation - moves particles upward
+   Creates flowing background effect */
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100vh); }
+}
+
+/* ==========================================================================
+   16. SCROLL BEHAVIOR - Smooth Scrolling
+   Makes anchor links scroll smoothly
+   ========================================================================== */
+
+/* Targets <html>
+   Enables smooth scroll when clicking nav links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   17. CONTACT SECTION
+   "Let's build something together" area
+   ========================================================================== */
+
+/* Targets <section class="contact">
+   Blue background section at bottom before footer */
+.contact {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #0f172a;
+    border-bottom: 1px solid #1f2d40;
+}
+
+/* Targets <h1> in contact section
+   Large heading "Let's build something together" */
+.contact h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Targets <p> in contact section
+   Description text under heading */
+.contact p {
+    max-width: 600px;
+    margin: auto;
+    color: #9ca3af;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* Targets <a class="btn"> in contact section
+   "Say Hello" email button - blue background */
+.contact .btn {
+    display: inline-block;
+    margin-top: 40px;
+    background: #2563eb;
+    color: white;
+    padding: 16px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Targets contact button on hover
+   Darker blue on hover */
+.contact .btn:hover {
+    background: #1d4ed8;
+}
+
+/* ==========================================================================
+   18. FOOTER - Bottom Section
+   Site footer with brand and social links
+   ========================================================================== */
+
+/* Targets <footer class="footer">
+   Dark blue footer at very bottom */
+.footer {
+    background-color: #0f172a;
+    padding: 60px 8%;
+}
+
+/* Targets <div class="footer-top">
+   Top row of footer with brand and social */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Targets <div class="brand"> in footer
+   Holds name and tagline */
+.brand h2 {
+    color: rgb(0 229 255);
+    margin-bottom: 10px;
+}
+
+.brand p {
+    color: #9ca3af;
+    max-width: 300px;
+}
+
+/* Targets <div class="social"> in footer
+   Container for social media icons/links */
+.social a {
+    margin-left: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Targets social link on hover
+   Turns blue when hovered */
+.social a:hover {
+    transform: translateY(-2px);
+}
+
+.social img {
+    width: 24px !important;
+    height: 24px !important;
+    display: block;
+    filter: brightness(0.7);
+    transition: all 0.3s ease;
+}
+
+.social a:hover img {
+    filter: brightness(1) drop-shadow(0 2px 8px rgba(59,130,246,0.5));
+    transform: scale(1.15);
+}
+
+/* Targets <div class="footer-bottom">
+   Bottom row with copyright and back-to-top */
+.footer-bottom {
+    margin-top: 40px;
+    border-top: 1px solid #1f2d40;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+/* Targets <a class="top">
+   "Back to top" link in footer */
+.top {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top:hover {
+    color: #3b82f6;
+}
+
+/* ==========================================================================
+   19. RESPONSIVE STYLES
+   Mobile and tablet adjustments (in responsive.css)
+   ========================================================================== */
+
+/* Note: Media queries for mobile/tablet are in responsive.css
+   These override styles when screen is smaller */
+
+
