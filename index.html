@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nishaim Limbu Yonghang - Portfolio</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -12,7 +13,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
 </head>
-
+<style>
+    .like li a{
+        background: rgb(30, 30, 152);
+        color: white;
+    }
+    .like li a:hover {
+        background: rgb(54, 43, 255);
+        box-shadow: 0 4px 15px rgba(74, 121, 210, 0.4);
+        color: lavender;
+    }
+</style>
 <body>
     <header>
         <nav>
@@ -28,6 +39,9 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#work">Experience</a></li>
+                    <div class="like">
+                        <li><a href="#contact">Colab</a></li>
+                    </div>
                 </ul>
             </div>
         </nav>
@@ -48,7 +62,7 @@
                 </div>
             </div>
             <div class="rightSection">
-                <img src="image.png" alt="Profile picture of Nishaim Limbu Yonghang" loading="lazy">
+                <img src="image 1.png" alt="Profile picture of Nishaim Limbu Yonghang" loading="lazy">
             </div>
         </section>
         <hr>
@@ -166,7 +180,7 @@
     </main>
 
     <!-- Contact Section - Build Together -->
-    <section class="contact">
+    <section id="contact" class="contactSection">
         <h1>Let's build something together</h1>
         <p>
             I'm currently looking for new opportunities and my inbox is always open.
@@ -184,11 +198,18 @@
                 <p>Building digital solutions with passion and precision.</p>
             </div>
             <div class="social">
-                <a href="https://github.com/NishaimLimbu" target="_blank" aria-label="GitHub">🐙</a>
+                <a href="https://github.com/NishaimLimbu" target="_blank" aria-label="GitHub"><i class="fab fa-github"
+                        style="font-size: 22px; color:lavender;"></i>
+                </a>
                 <a href="https://www.linkedin.com/in/nishaim-limbu-yonghang-9909153b5" target="_blank"
-                    aria-label="LinkedIn">in</a>
-                <a href="https://www.instagram.com/shaming.limbu/" target="_blank" aria-label="Instagram">📷</a>
-                <a href="https://www.facebook.com/shaming.nishaim" target="_blank" aria-label="Facebook">f</a>
+                    aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"
+                        style="font-size: 22px; color: lavender;"></i></a>
+                <a href="https://www.instagram.com/shaming.limbu/" target="_blank" aria-label="Instagram"><i
+                        class="fa-brands fa-instagram" style="font-size: 22px; color: lavender;"></i>
+                </a>
+                <a href="https://www.facebook.com/shaming.nishaim" target="_blank" aria-label="Facebook"><i
+                        class="fab fa-facebook" style="font-size: 22px; color: lavender;"></i>
+                </a>
             </div>
         </div>
         <div class="footer-bottom">
