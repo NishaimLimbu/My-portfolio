@@ -11,6 +11,7 @@ body {
 
 }
 
+
 body {
    font-family: 'Poppins', sans-serif;
    background: #0d121e;
@@ -198,7 +199,7 @@ main {
 
 .rightSection img {
    height: 450px;
-   border-radius: 10px;
+   border-radius: 2000px;
    object-fit: cover;
 }
 
@@ -328,10 +329,7 @@ main hr {
    filter: drop-shadow(0 0 35px rgba(199, 125, 255, 0.7));
 }
 
-.project-card:hover .project-icon {
-   transform: scale(1.15);
-   filter: drop-shadow(0 0 15px rgba(199, 125, 255, 0.8));
-}
+/* No hover transform on project icons */
 
 .project-card:hover h3 {
    color: #ffd700;
